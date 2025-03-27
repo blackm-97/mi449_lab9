@@ -1,43 +1,55 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css' 
+
+const shop = [
+  {title: "Another Rat", cost: 10, addition: 1}
+];
+
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [itr, setItr] = useState(0)
+
+  const [points, setPoints] = useState(0);
+  const [incrementer, setIncrement] = useState(1);
+
+  function ShopHandler(price, additive){
+    if(price <= additive){
+      setIncrement((incrementer) => incrementer + additive);
+      setPoints((points) => points - price);
+    }
+  }
+  
+  function ClickerButton({increment}){
+    return(
+      <>
+        <button onClick={() => setPoints((points) => points + increment)}><img src="GiantRAt.png"></img></button>
+  
+      </>
+    )
+  }
+
+  function ShopButtons(){
+    const listItems = shop.map(shopItem =>
+      <>
+        <p>{shopItem.cost} Points</p>
+        <button onClick={() => ShopHandler(shopItem.cost,shopItem.addition)}>{shopItem.title}</button>
+      </>
+    );
+    return (
+      <section>{listItems}</section>
+    )
+  }
+
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src="/GiantRAt.png" className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-
-        <button onClick={() => setCount((count) => count * itr)}>
-          multiply count by {itr}
-        </button>
-
-        <button onClick={() => setItr((itr) => itr + 1)}>
-          increase mutliplier
-        </button>
-
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>RAT CLICKER</h1>
+      <h2>Welcome! You win if you can get to 10,000 clicks! Good luck</h2>
+      <h1>{points}</h1>
+      <ClickerButton increment={incrementer}/>
+      <h2>Points Per Click: {incrementer}</h2>
+      <ShopButtons/>
     </>
   )
 }
