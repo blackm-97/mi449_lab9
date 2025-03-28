@@ -27,7 +27,7 @@ function App() {
   }
   
   function ClickerButton({increment}){
-    if(points > win_threshold){
+    if(points >= win_threshold){
       return(
         <>
           <h1 className="winMessage">YOU WIN!!!</h1>
@@ -47,7 +47,7 @@ function App() {
   function ShopButtons(){
     const listItems = shop.map(shopItem =>
       <div>
-        <p>{shopItem.cost} Points</p>
+        <p className={shopItem.title}>{shopItem.cost} Points</p>
         <button onClick={() => ShopHandler(shopItem.cost,shopItem.addition, points)}>{shopItem.title}</button>
       </div>
     );
@@ -59,7 +59,7 @@ function App() {
 
   return (
     <>
-      <h1>RAT CLICKER</h1>
+      <h1 className="gameTitle">RAT CLICKER</h1>
       <h2>Welcome! You win if you can get to 100,000,000 clicks! Good luck</h2>
       <h1>{points}</h1>
       <ClickerButton increment={incrementer}/>

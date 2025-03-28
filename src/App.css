@@ -7,6 +7,7 @@
 
 body{
   background-color: rgb(206, 201, 201);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .logo {
@@ -55,4 +56,16 @@ section{
 .winMessage{
   color: rgb(9, 209, 52);
   font-size: 4em;
+}
+
+p{
+  font-size: 1em;
+}
+
+.gameTitle{
+  font-size: 4em;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #ff1717;
+  text-decoration-line: overline underline;
+  text-decoration-color: rgb(128, 0, 49);
 }
