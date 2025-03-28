@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+body{
+  background-color: rgb(206, 201, 201);
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -39,4 +43,16 @@
 
 .read-the-docs {
   color: #888;
+}
+
+section{
+  border: 4px dotted #421722aa;
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 20px;
+}
+
+.winMessage{
+  color: rgb(9, 209, 52);
+  font-size: 4em;
 }
