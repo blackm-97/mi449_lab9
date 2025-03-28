@@ -3,10 +3,12 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: rgb(255, 201, 243);
+  border-radius: 20px;;
 }
 
 body{
-  background-color: rgb(206, 201, 201);
+  background-color: rgb(216, 143, 174);
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
